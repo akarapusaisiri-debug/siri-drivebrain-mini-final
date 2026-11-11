@@ -6,6 +6,7 @@ find_package(Protobuf REQUIRED CONFIG)
 find_package(foxglove-websocket REQUIRED)
 find_package(mcap REQUIRED)
 find_package(spdlog REQUIRED)
+add_subdirectory(drivebrain_comms)
 
 # Add your source files here
 add_executable(mini-drivebrain
@@ -24,6 +25,7 @@ target_link_libraries(mini-drivebrain PRIVATE
     mcap::mcap
     spdlog::spdlog
     protobuf::libprotobuf
+    drivebrain_comms
 )
 
 # static so the binary runs on the pi without installing anything
